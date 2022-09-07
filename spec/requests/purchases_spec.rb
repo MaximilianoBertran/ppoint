@@ -9,7 +9,7 @@ RSpec.describe 'PurchasesController', type: :request do
   token = UsersToken.last.token
   headers = { 'Authorization' => "Bearer #{token}" }
 
-  #FactoryBot.create_list(:category, 30)  if Product.count < 100
+  FactoryBot.create_list(:category, 30)  if Product.count < 100
 
   describe 'GET top sell' do
     before do        
@@ -47,7 +47,7 @@ RSpec.describe 'PurchasesController', type: :request do
   describe 'GET graphic data' do
     before do
       granularity = "day"
-      get "/purchases/#{granularity}", headers: headers
+      get "/purchases/graphic/#{granularity}", headers: headers
     end
 
     it 'sell detail by granularity' do

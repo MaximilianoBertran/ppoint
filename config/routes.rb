@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/purchases/top_sell', to: 'purchases#top_sell'
   get '/purchases/top_amount', to: 'purchases#top_amount'
 
-  get '/purchases/:granularity', to: 'purchases#graphic'
+  get '/purchases/graphic/:granularity', to: 'purchases#graphic'
 
 end
